@@ -4,12 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/drawable/gradient_background.xml" value="0.1145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/drawable/ic_baseline_house_24.xml" value="0.1275" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/drawable/mybutton.xml" value="0.1145" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/drawable/rounded_rect.xml" value="0.176" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/activity_guest_account.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/activity_guest_account.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/activity_login_page.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/recycler_view_row.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/layout/recycler_view_row.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/PropertyResale_App/app/src/main/res/xml/mybutton.xml" value="0.290234375" />
       </map>
     </option>
