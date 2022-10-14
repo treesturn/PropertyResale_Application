@@ -64,6 +64,13 @@
         android:backgroundTint="@color/black"
         android:text="@string/Log_in" />
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/triston_logo"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"/>
+
     <Button
         android:id="@+id/guest_signin"
         style = "@style/Widget.MaterialComponents.Button.TextButton"
