@@ -2,26 +2,28 @@ package com.example.propertyresale_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class sign_page extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_page);
 
         /** variables declared - start */
 
         TextView username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
         Button loginButton = (Button) findViewById(R.id.loginButton);
+        Button guestSignIn = (Button) findViewById(R.id.guest_signin);
 
 //        String queried_password = "1234";
         /** end */
@@ -30,18 +32,18 @@ public class MainActivity extends AppCompatActivity {
         try{
             databaseHelper.CheckDb();
         }catch (Exception e){
-            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
         try{
             databaseHelper.OpenDatabase();
         }catch (Exception e){
-            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
 
         try{
-            Toast.makeText(MainActivity.this, databaseHelper.getpassword(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_page.this, databaseHelper.getpassword(), Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
 
 
@@ -54,12 +56,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (username.getText().toString().equals(databaseHelper.getusername()) && password.getText().toString().equals(databaseHelper.getpassword()))
                 {
-                    Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(sign_page.this, "Login successful", Toast.LENGTH_LONG).show();
+
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this, "Login unsuccessful, credentials incorrect", Toast.LENGTH_LONG).show();
+                    Toast.makeText(sign_page.this, "Login unsuccessful, credentials incorrect", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        /** end */
+
+        /** Guest Login Button pressed - start */
+//        String finalQueried_password = queried_password;
+        guestSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i = new Intent(getApplicationContext(), guest_account.class);
+                startActivity(i);
             }
         });
         /** end */

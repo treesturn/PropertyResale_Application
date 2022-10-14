@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/gradient_background">
+    tools:context=".sign_page"
+    android:background="#222121">
 
     <TextView
         android:id="@+id/sign_in"

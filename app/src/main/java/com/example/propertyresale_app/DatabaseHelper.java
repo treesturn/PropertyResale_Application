@@ -109,4 +109,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return "it is empty";
         }
     }
+
+    public Cursor getHousing(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
+        Cursor c = sqLiteDatabase.rawQuery("select housing_sn, town, resale_price from housing_list limit 10", null);
+        return c;
+    }
 }
