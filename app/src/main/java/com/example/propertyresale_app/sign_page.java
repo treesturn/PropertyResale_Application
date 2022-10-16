@@ -41,7 +41,7 @@ public class sign_page extends AppCompatActivity {
         }
 
         try{
-            Toast.makeText(sign_page.this, databaseHelper.getpassword(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(sign_page.this, databaseHelper.getpassword(username.toString()), Toast.LENGTH_LONG).show();
         }catch (Exception e){
             Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
@@ -54,9 +54,13 @@ public class sign_page extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals(databaseHelper.getusername()) && password.getText().toString().equals(databaseHelper.getpassword()))
+                if (databaseHelper.getusername_and_password(username.getText().toString(), password.getText().toString()))
                 {
                     Toast.makeText(sign_page.this, "Login successful", Toast.LENGTH_LONG).show();
+                    Intent a = new Intent(getApplicationContext(), account_user.class);
+                    a.putExtra("username", username.getText().toString());
+                    startActivity(a);
+
 
                 }
                 else
@@ -73,8 +77,8 @@ public class sign_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(getApplicationContext(), guest_account.class);
-                startActivity(i);
+                Intent b = new Intent(getApplicationContext(), guest_account.class);
+                startActivity(b);
             }
         });
         /** end */

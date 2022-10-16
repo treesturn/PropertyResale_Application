@@ -84,10 +84,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase.openDatabase(filepath, null, 0);
     }
 
-    public String getpassword(){
+    public String getpassword(String y){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 //        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
-        Cursor c = sqLiteDatabase.rawQuery("select password from account_user where name like \"Joey Lim\"", new String[]{});
+        Cursor c = sqLiteDatabase.rawQuery("select password from account_user where name like ?", new String[]{y});
         if (c.moveToFirst()){
 
             return c.getString(c.getColumnIndex("password"));
@@ -97,16 +97,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public String getusername(){
+    public String getusername(String x){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 //        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
-        Cursor c = sqLiteDatabase.rawQuery("select name from account_user where name like \"Joey Lim\"", new String[]{});
+        Cursor c = sqLiteDatabase.rawQuery("select name from account_user where name like ?", new String[]{x});
         if (c.moveToFirst()){
 
             return c.getString(c.getColumnIndex("name"));
         }
         else{
             return "it is empty";
+        }
+    }
+
+    public Boolean getusername_and_password(String x, String y){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
+        Cursor c = sqLiteDatabase.rawQuery("select * from account_user where name = ? and password  = ?", new String[]{x, y});
+        if (c.getCount()>0){
+
+            return true;
+        }
+        else{
+            return false;
         }
     }
 

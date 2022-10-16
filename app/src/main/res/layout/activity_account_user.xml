@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guest_account"
+    tools:context=".account_user"
     android:background="#222121">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/Top_box"
+        android:id="@+id/Top_box2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintTop_toBottomOf="@id/Top_box"
+        app:layout_constraintTop_toBottomOf="@id/Top_box2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp">
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:text="Guest123"
+            android:text="@string/Username"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,26 +72,6 @@
             android:layout_marginBottom="10dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/Resale_Houses_Table"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
-
-<!--    </androidx.recyclerview.widget.RecyclerView>-->
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
