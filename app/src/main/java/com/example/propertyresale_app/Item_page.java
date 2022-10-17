@@ -23,7 +23,7 @@ public class Item_page extends AppCompatActivity {
         TextView storey_item = findViewById(R.id.storey_item);
         TextView area_item = findViewById(R.id.area_item);
         TextView model_item = findViewById(R.id.model_item);
-//        TextView agent_info = findViewById(R.id.agent_info);
+        TextView agent_info_item = findViewById(R.id.agent_info_item);
         TextView interestedbuyers_item = findViewById(R.id.interestedbuyers_item);
 
         String sn = getIntent().getStringExtra("sn");
@@ -38,7 +38,7 @@ public class Item_page extends AppCompatActivity {
         storey_item.setText(databaseHelper.getstoreytype(sn));
         area_item.setText(databaseHelper.getareatype(sn));
         model_item.setText(databaseHelper.getmodeltype(sn));
-//        agent_info.setText(databaseHelper.getagentinfo(sn));
+        agent_info_item.setText(databaseHelper.getagentinfo(sn));
         interestedbuyers_item.setText(databaseHelper.getnumberofinterestedbuyers(sn));
 
 

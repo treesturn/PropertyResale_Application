@@ -84,31 +84,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase.openDatabase(filepath, null, 0);
     }
 
-    public String getpassword(String y){
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-//        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
-        Cursor c = sqLiteDatabase.rawQuery("select password from account_user where name like ?", new String[]{y});
-        if (c.moveToFirst()){
-
-            return c.getString(c.getColumnIndex("password"));
-        }
-        else{
-            return "it is empty";
-        }
-    }
-
-    public String getusername(String x){
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-//        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
-        Cursor c = sqLiteDatabase.rawQuery("select name from account_user where name like ?", new String[]{x});
-        if (c.moveToFirst()){
-
-            return c.getString(c.getColumnIndex("name"));
-        }
-        else{
-            return "it is empty";
-        }
-    }
+//    public String getpassword(String y){
+//        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+////        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
+//        Cursor c = sqLiteDatabase.rawQuery("select password from account_user where name like ?", new String[]{y});
+//        if (c.moveToFirst()){
+//
+//            return c.getString(c.getColumnIndex("password"));
+//        }
+//        else{
+//            return "it is empty";
+//        }
+//    }
+//
+//    public String getusername(String x){
+//        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+////        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
+//        Cursor c = sqLiteDatabase.rawQuery("select name from account_user where name like ?", new String[]{x});
+//        if (c.moveToFirst()){
+//
+//            return c.getString(c.getColumnIndex("name"));
+//        }
+//        else{
+//            return "it is empty";
+//        }
+//    }
 
     public Boolean getusername_and_password(String x, String y){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
@@ -190,6 +190,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    /**
+     *
+     * @param sn
+     * @return
+     *
+     * query 3
+     */
     public String getagentinfo(String sn){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         Cursor c = sqLiteDatabase.rawQuery("SELECT a.name, a.company, a.phone_no\n" +
@@ -199,7 +207,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         if (c.moveToFirst()){
 
-            return c.getString(c.getColumnIndex("name"));
+            return (c.getString(c.getColumnIndex("name")) + "\n" + c.getString(c.getColumnIndex("company")) + "\n" + c.getString(c.getColumnIndex("phone_no")));
         }
         else{
             return "it is empty";
