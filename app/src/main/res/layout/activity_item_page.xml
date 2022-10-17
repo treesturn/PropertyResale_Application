@@ -12,20 +12,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/resale_property_image"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/SN_item"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="250sp"-->
+<!--        android:layout_marginStart="10sp"-->
+<!--        android:text="SN: "-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textColor="@color/tanAccent"/>-->
 
     <TextView
-        android:id="@+id/SN_item"
+        android:id="@+id/price_item"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250sp"
-        android:layout_marginStart="10sp"
-        android:text="SN: "
+        android:layout_marginTop="230sp"
+        android:layout_marginStart="250sp"
+        android:text="Price"
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="30sp"
+        android:textColor="@color/tanAccent"/>
+
+    <TextView
+        android:id="@+id/town"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290sp"
+        android:layout_marginStart="10sp"
+        android:text="Town: "
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
@@ -36,14 +66,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="290sp"
-        android:layout_marginStart="10sp"
-        android:text="Town: "
-        android:textStyle="bold"
-        android:textSize="25sp"
+        android:layout_marginStart="100sp"
+        android:text="Town"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
-        android:id="@+id/price_item"
+        android:id="@+id/flattype"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,9 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="330sp"
         android:layout_marginStart="10sp"
-        android:text="Price: "
+        android:text="Type: "
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
@@ -63,11 +92,24 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="330sp"
+        android:layout_marginStart="100sp"
+        android:text="Type"
+        android:textSize="20sp"
+        android:textColor="@color/tanAccent"/>
+
+    <TextView
+        android:id="@+id/storey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="370sp"
         android:layout_marginStart="10sp"
-        android:text="Type: "
+        android:text="Storey: "
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
@@ -77,11 +119,24 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="370sp"
+        android:layout_marginStart="100sp"
+        android:text="Storey"
+        android:textSize="20sp"
+        android:textColor="@color/tanAccent"/>
+
+    <TextView
+        android:id="@+id/area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="410sp"
         android:layout_marginStart="10sp"
-        android:text="storey: "
+        android:text="Area: "
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
@@ -91,11 +146,24 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="410sp"
+        android:layout_marginStart="100sp"
+        android:text="Area"
+        android:textSize="20sp"
+        android:textColor="@color/tanAccent"/>
+
+    <TextView
+        android:id="@+id/model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="450sp"
         android:layout_marginStart="10sp"
-        android:text="Area: "
+        android:text="Model: "
         android:textStyle="bold"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
     <TextView
@@ -105,26 +173,25 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="490sp"
-        android:layout_marginStart="10sp"
-        android:text="Model: "
-        android:textStyle="bold"
-        android:textSize="25sp"
+        android:layout_marginTop="450sp"
+        android:layout_marginStart="100sp"
+        android:text="Model"
+        android:textSize="20sp"
         android:textColor="@color/tanAccent"/>
 
-    <TextView
-        android:id="@+id/agent_info"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="530sp"
-        android:layout_marginStart="10sp"
-        android:text="Agent Information "
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:textColor="@color/tanAccent"/>
+<!--    <TextView-->
+<!--        android:id="@+id/agent_info"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="530sp"-->
+<!--        android:layout_marginStart="10sp"-->
+<!--        android:text="Agent Information "-->
+<!--        android:textStyle="bold"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textColor="@color/tanAccent"/>-->
 
     <TextView
         android:id="@+id/interestedbuyers_item"
