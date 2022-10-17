@@ -129,4 +129,81 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor c = sqLiteDatabase.rawQuery("select housing_sn, town, resale_price from housing_list limit 40", null);
         return c;
     }
+
+    public String gethousingtype(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("select flat_type_room from housing_list where housing_sn like ?", new String[]{sn});
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("flat_type_room"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    public String getstoreytype(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("select storey_range from housing_list where housing_sn like ?", new String[]{sn});
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("storey_range"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    public String getareatype(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("select floor_area_sqm from housing_list where housing_sn like ?", new String[]{sn});
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("floor_area_sqm"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    public String getmodeltype(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("select flat_model from housing_list where housing_sn like ?", new String[]{sn});
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("flat_model"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    public String getnumberofinterestedbuyers(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("select interested_buyer from housing_list where housing_sn like ?", new String[]{sn});
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("interested_buyer"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    public String getagentinfo(String sn){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT a.name, a.company, a.phone_no\n" +
+                "FROM agent a JOIN housing_list h\n" +
+                "ON h.license_id = a.license_id\n" +
+                "WHERE h.housing_sn = ?", new String[]{sn});
+
+        if (c.moveToFirst()){
+
+            return c.getString(c.getColumnIndex("name"));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
 }

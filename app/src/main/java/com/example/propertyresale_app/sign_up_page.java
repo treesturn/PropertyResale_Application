@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class sign_page extends AppCompatActivity {
+public class sign_up_page extends AppCompatActivity {
 
     DatabaseHelper databaseHelper;
 
@@ -32,18 +32,18 @@ public class sign_page extends AppCompatActivity {
         try{
             databaseHelper.CheckDb();
         }catch (Exception e){
-            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_up_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
         try{
             databaseHelper.OpenDatabase();
         }catch (Exception e){
-            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_up_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
 
         try{
 //            Toast.makeText(sign_page.this, databaseHelper.getpassword(username.toString()), Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(sign_page.this, e.toString(), Toast.LENGTH_LONG).show();
+            Toast.makeText(sign_up_page.this, e.toString(), Toast.LENGTH_LONG).show();
         }
 
 
@@ -56,8 +56,8 @@ public class sign_page extends AppCompatActivity {
             public void onClick(View view) {
                 if (databaseHelper.getusername_and_password(username.getText().toString(), password.getText().toString()))
                 {
-                    Toast.makeText(sign_page.this, "Login successful", Toast.LENGTH_LONG).show();
-                    Intent a = new Intent(getApplicationContext(), account_user.class);
+                    Toast.makeText(sign_up_page.this, "Login successful", Toast.LENGTH_LONG).show();
+                    Intent a = new Intent(getApplicationContext(), user_account.class);
                     a.putExtra("username", username.getText().toString());
                     startActivity(a);
 
@@ -65,7 +65,7 @@ public class sign_page extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(sign_page.this, "Login unsuccessful, credentials incorrect", Toast.LENGTH_LONG).show();
+                    Toast.makeText(sign_up_page.this, "Login unsuccessful, credentials incorrect", Toast.LENGTH_LONG).show();
                 }
             }
         });

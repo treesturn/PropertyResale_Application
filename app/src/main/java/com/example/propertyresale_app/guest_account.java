@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class guest_account extends AppCompatActivity {
+public class guest_account extends AppCompatActivity implements RecyclerViewInterface{
 
     RecyclerView Resale_Houses_Table;
     ArrayList <String> SN, town, price;
@@ -27,7 +28,7 @@ public class guest_account extends AppCompatActivity {
         town = new ArrayList<>();
         price = new ArrayList<>();
         Resale_Houses_Table = findViewById(R.id.Resale_Houses_Table);
-        adapater = new Property_RecyclerViewAdapater(this, SN, town, price);
+        adapater = new Property_RecyclerViewAdapater(this, SN, town, price,this);
         Resale_Houses_Table.setAdapter(adapater);
         Resale_Houses_Table.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
@@ -52,5 +53,10 @@ public class guest_account extends AppCompatActivity {
                 price.add(cursor.getString(2));
             }
         }
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
     }
 }
