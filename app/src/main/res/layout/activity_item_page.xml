@@ -11,9 +11,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="-100dp"
+        android:layout_width="450dp"
+        android:layout_height="400dp"
         android:src="@drawable/resale_property_image"/>
 
 <!--    <TextView-->
@@ -29,20 +29,35 @@
 <!--        android:textStyle="bold"-->
 <!--        android:textSize="25sp"-->
 <!--        android:textColor="@color/tanAccent"/>-->
-
-    <TextView
-        android:id="@+id/price_item"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/guest_signin_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="230sp"
-        android:layout_marginStart="250sp"
-        android:text="Price"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        android:textColor="@color/tanAccent"/>
+        android:background="@drawable/rounded_rect"
+        android:backgroundTint="@color/blueblack"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="210dp"
+        android:elevation="15dp">
+
+        <TextView
+            android:id="@+id/price_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:text="Price"
+            android:textSize="25sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="10dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/town"
@@ -218,9 +233,9 @@
         android:text="100"
         android:textStyle="bold"
         android:textSize="40sp"
-        android:textColor="@color/tanAccent"
+        android:textColor="#ff6633"
         android:drawablePadding="10sp"
         android:drawableLeft="@drawable/ic_baseline_thumb_up_24"
-        android:drawableTint="@color/tanAccent"/>
+        android:drawableTint="#ff6633"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
