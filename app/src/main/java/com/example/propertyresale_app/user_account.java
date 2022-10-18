@@ -28,14 +28,11 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
     DatabaseHelper databaseHelper;
     Property_RecyclerViewAdapater adapater;
 
-    String sql_statement = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_user);
-
         databaseHelper = new DatabaseHelper(this, "alpha_SQLite.db", 1);
         SN = new ArrayList<>();
         town = new ArrayList<>();
@@ -50,9 +47,9 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         String username = getIntent().getStringExtra("username");
         username_text.setText(username);
 
-        Button filter_button = findViewById(R.id.FilterButton);
+        Button transactions_button = findViewById(R.id.transactionsButton);
 
-        filter_button.setOnClickListener(new View.OnClickListener() {
+        transactions_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -69,7 +66,6 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         if(cursor.getCount() == 0)
         {
             Toast.makeText(this, "No Data Found", Toast.LENGTH_SHORT).show();
-            return;
         }
         else
         {
@@ -100,18 +96,19 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheetlayout);
 
+        TextView SN2 = dialog.findViewById(R.id.SN2);
+//        TextView town2 = dialog.findViewById(R.id.town2);
+//        TextView interestedbuyers2 = dialog.findViewById(R.id.interestedbuyers2);
+        Button Exitbutton = dialog.findViewById(R.id.ExitButton);
 
-        TextView max_price = (TextView) dialog.findViewById(R.id.max_price);
-        Button Savebutton = dialog.findViewById(R.id.SaveButton);
+        SN2.setText(databaseHelper.gettransactinfo());
 
-
-        Savebutton.setOnClickListener(new View.OnClickListener() {
+        Exitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                sql_statement = "select housing_sn, town, resale_price from housing_list where resale_price <= " + max_price.getText().toString() + " limit 20";
                 dialog.dismiss();
-                Toast.makeText(user_account.this, "Saved", Toast.LENGTH_SHORT).show();
+                Toast.makeText(user_account.this, "Exit", Toast.LENGTH_SHORT).show();
             }
         });
 

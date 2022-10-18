@@ -132,11 +132,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getfilteredHousing(String statement){
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery(statement, null);
-        return c;
-    }
 
     public String gethousingtype(String sn){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -216,6 +211,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()){
 
             return (c.getString(c.getColumnIndex("name")) + "\n" + c.getString(c.getColumnIndex("company")) + "\n" + c.getString(c.getColumnIndex("phone_no")));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    /**
+     *
+     * @param
+     * @return
+     *
+     * query 4
+     */
+    public String gettransactinfo(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT h.housing_sn, h.town, h.interested_buyer\n" +
+                "FROM transact t JOIN housing_list h\n" +
+                "ON t.housing_sn = h.housing_sn limit 1;", new String[]{});
+
+        if (c.moveToFirst()){
+
+            return (c.getString(c.getColumnIndex("housing_sn")) + "              " + c.getString(c.getColumnIndex("town")) + "                    " + c.getString(c.getColumnIndex("interested_buyer")));
         }
         else{
             return "it is empty";

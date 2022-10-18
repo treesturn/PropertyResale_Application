@@ -28,7 +28,7 @@ public class guest_account extends AppCompatActivity implements RecyclerViewInte
         town = new ArrayList<>();
         price = new ArrayList<>();
         Resale_Houses_Table = findViewById(R.id.Resale_Houses_Table);
-        adapater = new Property_RecyclerViewAdapater(this, SN, town, price,this);
+        adapater = new Property_RecyclerViewAdapater(this, SN, town, price, this);
         Resale_Houses_Table.setAdapter(adapater);
         Resale_Houses_Table.setLayoutManager(new LinearLayoutManager(this));
         displaydata();
@@ -42,7 +42,6 @@ public class guest_account extends AppCompatActivity implements RecyclerViewInte
         if(cursor.getCount() == 0)
         {
             Toast.makeText(this, "No Data Found", Toast.LENGTH_SHORT).show();
-            return;
         }
         else
         {

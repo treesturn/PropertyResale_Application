@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -52,6 +54,7 @@ public class Property_RecyclerViewAdapater extends RecyclerView.Adapter<Property
         //the recycler view wants to know the number of items to display
         return SN.size();
     }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
