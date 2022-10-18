@@ -30,12 +30,12 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="#30ffffff"
-        android:hint="@string/Username"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
+        android:hint="@string/Username"
         android:paddingStart="10dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"/>
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/password"
@@ -60,9 +60,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/password"
         android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
         android:backgroundTint="@color/black"
-        android:text="@string/Log_in" />
+        android:text="@string/Log_in"
+        android:textColor="@color/white" />
 
     <ImageView
         android:layout_width="100dp"

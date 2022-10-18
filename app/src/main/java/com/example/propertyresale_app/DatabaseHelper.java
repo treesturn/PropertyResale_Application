@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Objects;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -127,6 +128,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 //        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
         Cursor c = sqLiteDatabase.rawQuery("select housing_sn, town, resale_price from housing_list limit 40", null);
+        return c;
+
+    }
+
+    public Cursor getfilteredHousing(String statement){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery(statement, null);
         return c;
     }
 

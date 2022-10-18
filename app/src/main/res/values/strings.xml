@@ -1,12 +1,12 @@
 <resources>
 
-    <!--    login page-->
     <string name="app_name">Database_PropertyApp</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Log_in">Log in</string>
     <string name="Sign_in">Sign In</string>
     <string name="Guest_Sign_in">Continue As Guest</string>
+    <string name="Filter">Filter</string>
 
 </resources>
 
