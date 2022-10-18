@@ -14,6 +14,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,12 +31,16 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
     DatabaseHelper databaseHelper;
     Property_RecyclerViewAdapater adapater;
 
+    String[] towns = {"ANG MO KIO", "BEDOK", "BISHAN"};
+    AutoCompleteTextView autoCompleteTxt;
+    ArrayAdapter<String> adapteritems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_user);
         databaseHelper = new DatabaseHelper(this, "alpha_SQLite.db", 1);
+
         SN = new ArrayList<>();
         town = new ArrayList<>();
         price = new ArrayList<>();
@@ -47,9 +54,10 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         String username = getIntent().getStringExtra("username");
         username_text.setText(username);
 
-        Button transactions_button = findViewById(R.id.transactionsButton);
+        Button services_button = findViewById(R.id.ServicesButton);
 
-        transactions_button.setOnClickListener(new View.OnClickListener() {
+
+        services_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -58,6 +66,7 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         });
 
     }
+
 
     private void displaydata()
     {
@@ -117,5 +126,18 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
+
+        autoCompleteTxt = dialog.findViewById(R.id.town_dropdown);
+        adapteritems = new ArrayAdapter<String>(this, R.layout.town_list, towns);
+        autoCompleteTxt.setAdapter(adapteritems);
+
+        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String item = adapterView.getItemAtPosition(i).toString();
+                databaseHelper.getavgprice(item);
+            }
+        });
     }
+
 }

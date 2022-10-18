@@ -90,15 +90,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/transactionsButton"
+        android:id="@+id/ServicesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/black"
-        android:text="Transactions"
+        android:text="Services"
         android:textSize="14sp"
         android:textColor="@color/white"
-        android:elevation="10dp"/>
+        android:elevation="15dp"
+        android:outlineSpotShadowColor="@color/white"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

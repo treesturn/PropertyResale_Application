@@ -132,6 +132,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Cursor gettowns(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT DISTINCT town from housing_list;", null);
+        return c;
+    }
+
+
+
 
     public String gethousingtype(String sn){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -233,6 +242,29 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()){
 
             return (c.getString(c.getColumnIndex("housing_sn")) + "              " + c.getString(c.getColumnIndex("town")) + "                    " + c.getString(c.getColumnIndex("interested_buyer")));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    /**
+     *
+     * @param
+     * @return
+     *
+     * query 4
+     */
+    public String getavgprice(String town){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT h.town, h.flat_type_room, AVG(h.resale_price)\n" +
+                "FROM housing_list h\n" +
+                "WHERE h.town = ? AND h.flat_type_room = 4\n" +
+                "GROUP BY (h.town);\n", new String[]{town});
+
+        if (c.moveToFirst()){
+
+            return (c.getString(c.getColumnIndex("AVG(h.resale_price)")));
         }
         else{
             return "it is empty";
