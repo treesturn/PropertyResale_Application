@@ -253,7 +253,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param
      * @return
      *
-     * query 4
+     * query 2
      */
     public String getavgprice(String town){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -262,6 +262,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()){
 
             return (c.getString(c.getColumnIndex("AVG(resale_price)")));
+        }
+        else{
+            return "it is empty";
+        }
+    }
+
+    /**
+     *
+     * @param
+     * @return
+     *
+     * query 5
+     */
+    public String getpairofsimilarprice(String price){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT h1.housing_sn as sn1, h2.housing_sn as sn2, h1.town as town1, h2.town as town2, h1.floor_area_sqm as area1, \n" +
+                "h2.floor_area_sqm as area2, h1.remaining_lease as remaining1, h2.remaining_lease as remaining2 ,h1.resale_price,h2.resale_price\n" +
+                "FROM housing_list h1, housing_list h2\n" +
+                "WHERE (h1.housing_sn <> h2.housing_sn) AND (h1.town<>h2.town) AND h1.resale_price = h2.resale_price AND h1.resale_price like ? limit 1;",new String[]{price});
+
+        if (c.moveToFirst()){
+
+            return (c.getString(c.getColumnIndex("sn1")) + "          " + c.getString(c.getColumnIndex("town1")) + "          " + c.getString(c.getColumnIndex("area1")) + "          " + c.getString(c.getColumnIndex("remaining1")) + "\n" +
+                    c.getString(c.getColumnIndex("sn2")) + "          " + c.getString(c.getColumnIndex("town2")) + "               " + c.getString(c.getColumnIndex("area2")) + "             " + c.getString(c.getColumnIndex("remaining2")));
         }
         else{
             return "it is empty";

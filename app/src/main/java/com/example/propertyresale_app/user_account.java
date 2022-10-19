@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
@@ -139,6 +142,19 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
                 String item = adapterView.getItemAtPosition(i).toString();
                 String price = databaseHelper.getavgprice(item);
                 avgprice.setText("  $"+price);
+            }
+        });
+
+        Button search = dialog.findViewById(R.id.SearchButton);
+        TextView data = dialog.findViewById(R.id.data);
+        TextView similarprice = dialog.findViewById(R.id.similarprice);
+        String x = similarprice.getText().toString();
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                data.setText(databaseHelper.getpairofsimilarprice(x));
             }
         });
     }

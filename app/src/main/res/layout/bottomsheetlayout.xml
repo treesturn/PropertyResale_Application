@@ -130,7 +130,7 @@
         android:textStyle="bold"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linear_layout3"
+        android:id="@+id/constraint_layout3"
         app:layout_constraintTop_toBottomOf="@+id/average_price"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -175,8 +175,149 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/Comparison_title"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare"
+        android:textSize="23dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@drawable/rounded_rect"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Comparison_title"
+        android:id="@+id/constraint_layout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="20dp"
+            android:id="@+id/compare_flats"
+            android:layout_marginStart="7sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compare 2 flats with the same price"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="55dp"
+                android:layout_width="170dp"
+                android:layout_height="40dp"
+                android:hint="      Enter a Price"
+                app:hintTextColor="@color/white"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <AutoCompleteTextView
+                    android:id="@+id/similarprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginBottom="40dp"
+                android:id="@+id/SearchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/black"
+                android:text="Search"
+                android:textColor="@color/white"
+                android:elevation="10dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="120dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/compare1"
+                android:layout_marginStart="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SN"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/compare2"
+                android:layout_marginStart="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Town"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/compare3"
+                android:layout_marginStart="60sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Floor Area"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/compare4"
+                android:layout_marginStart="50sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remaining Lease"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="154dp"
+            android:id="@+id/data"
+            android:layout_marginStart="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="data"
+            android:textSize="14sp"
+            android:textColor="@color/white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <Button
-        app:layout_constraintTop_toBottomOf="@+id/linear_layout3"
+        app:layout_constraintTop_toBottomOf="@+id/constraint_layout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
