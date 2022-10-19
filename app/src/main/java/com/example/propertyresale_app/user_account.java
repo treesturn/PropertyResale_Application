@@ -148,12 +148,13 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         Button search = dialog.findViewById(R.id.SearchButton);
         TextView data = dialog.findViewById(R.id.data);
         TextView similarprice = dialog.findViewById(R.id.similarprice);
-        String x = similarprice.getText().toString();
+
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String x = similarprice.getText().toString();
                 data.setText(databaseHelper.getpairofsimilarprice(x));
             }
         });
