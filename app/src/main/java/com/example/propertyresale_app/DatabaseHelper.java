@@ -257,14 +257,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public String getavgprice(String town){
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT h.town, h.flat_type_room, AVG(h.resale_price)\n" +
-                "FROM housing_list h\n" +
-                "WHERE h.town = ? AND h.flat_type_room = 4\n" +
-                "GROUP BY (h.town);\n", new String[]{town});
+        Cursor c = sqLiteDatabase.rawQuery("SELECT AVG(resale_price) FROM housing_list WHERE town like ? GROUP BY (town);\n", new String[]{town});
 
         if (c.moveToFirst()){
 
-            return (c.getString(c.getColumnIndex("AVG(h.resale_price)")));
+            return (c.getString(c.getColumnIndex("AVG(resale_price)")));
         }
         else{
             return "it is empty";

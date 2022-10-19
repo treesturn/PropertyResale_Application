@@ -131,11 +131,14 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
         adapteritems = new ArrayAdapter<String>(this, R.layout.town_list, towns);
         autoCompleteTxt.setAdapter(adapteritems);
 
+        TextView avgprice = dialog.findViewById(R.id.avgprice);
+
         autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
-                databaseHelper.getavgprice(item);
+                String price = databaseHelper.getavgprice(item);
+                avgprice.setText("$"+price);
             }
         });
     }
