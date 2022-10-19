@@ -138,7 +138,7 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String item = adapterView.getItemAtPosition(i).toString();
                 String price = databaseHelper.getavgprice(item);
-                avgprice.setText("$"+price);
+                avgprice.setText("  $"+price);
             }
         });
     }

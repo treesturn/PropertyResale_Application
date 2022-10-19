@@ -18,7 +18,8 @@
         android:textSize="23dp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:background="@drawable/rounded_rect"/>
 
     <LinearLayout
         android:id="@+id/linear_layout1"
@@ -56,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Interested buyers"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white" />
     </LinearLayout>
@@ -104,14 +105,15 @@
         app:layout_constraintTop_toBottomOf="@+id/linear_layout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tools"
         android:textSize="23dp"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:textAlignment="center"/>
+        android:textAlignment="center"
+        android:background="@drawable/rounded_rect"/>
 
     <TextView
         app:layout_constraintStart_toStartOf="parent"
@@ -119,15 +121,15 @@
         app:layout_constraintTop_toBottomOf="@+id/Tools_title"
         android:layout_marginTop="20dp"
         android:id="@+id/average_price"
-        android:layout_marginStart="10sp"
+        android:layout_marginStart="7sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calculate mean price of resale flats in a specific town"
-        android:textSize="15.8sp"
+        android:textSize="15sp"
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linear_layout3"
         app:layout_constraintTop_toBottomOf="@+id/average_price"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,10 +137,13 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="10dp"
             android:layout_width="180dp"
             android:layout_height="40dp"
             android:hint="Select a town"
@@ -151,20 +156,24 @@
                 android:inputType="none"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/avgprice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="10dp"
-            android:text="price"
-            android:textSize="30dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:hint="  Average Price"
+            app:hintTextColor="@color/white"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            <AutoCompleteTextView
+                android:id="@+id/avgprice"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:inputType="none"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         app:layout_constraintTop_toBottomOf="@+id/linear_layout3"
