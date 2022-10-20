@@ -127,7 +127,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getHousing(){
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 //        String query = sqLiteDatabase.rawQuery("select password from account_users", null);
-        Cursor c = sqLiteDatabase.rawQuery("select housing_sn, town, resale_price from housing_list limit 40", null);
+        Cursor c = sqLiteDatabase.rawQuery("select housing_sn, town, resale_price from housing_list limit 100", null);
         return c;
 
     }

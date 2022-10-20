@@ -34,7 +34,7 @@ public class user_account extends AppCompatActivity implements RecyclerViewInter
     DatabaseHelper databaseHelper;
     Property_RecyclerViewAdapater adapater;
 
-    String[] towns = {"ANG MO KIO", "BEDOK", "BISHAN"};
+    String[] towns = {"ANG MO KIO", "BEDOK", "BISHAN", "BUKIT BATOK", "BUKIT MERAH", "BUKIT PANJANG", "BUKIT TIMAH", "CHOA CHU KANG", "CLEMENTI" };
     AutoCompleteTextView autoCompleteTxt;
     ArrayAdapter<String> adapteritems;
 
